@@ -1,0 +1,25 @@
+{
+    "manifest_version": 3,
+    "name": "Text Highlighter",
+    "description": "Highlight and save text on any webpage.",
+    "version": "1.0",
+    "permissions": ["activeTab", "storage"],
+    "background": {
+      "service_worker": "background.js"
+    },
+    "action": {
+      "default_popup": "popup.html",
+      "default_icon": "icon.png"
+    },
+    "content_scripts": [
+      {
+        "matches": ["<all_urls>"],
+        "js": ["content.js"]
+      }
+    ],
+    "host_permissions": [
+      "http://*/*",
+      "https://*/*"
+    ]
+  }
+  
